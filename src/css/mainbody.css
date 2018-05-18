@@ -1,0 +1,191 @@
+@media only screen and (min-width: 768px) {
+
+    #profile{ 
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: 2fr 4fr 2fr;
+        grid-template-areas: "quick content elsewhere";
+    }
+
+    #quick {
+        margin-left: 10px;
+    }
+
+    #elsewhere {
+        margin-right: 10px;
+    }
+
+}
+#main {
+    padding: 20px;
+}
+
+#content {
+    grid-area: content;
+}
+
+#quick {
+    grid-area: quick;
+}
+/*
+###########################################
+##############   Svg-Styles   ############
+###########################################
+*/
+svg {
+    vertical-align: baseline;
+}
+
+
+
+/*
+###########################################
+##############   Text-Styles   ############
+###########################################
+*/
+.text-left {
+    text-align: left;
+}
+
+/*
+###########################################
+##############     Module   ###############
+###########################################
+*/
+.module {
+    border: 1px solid #eee;
+    border-radius: 2px;
+    margin-bottom: 10px;
+    padding: 10px;
+    color: #565354;
+}
+
+
+/*
+###########################################
+#############     Quick    ################
+###########################################
+*/
+#quick-head a {
+    color: #33ACFF;
+    text-decoration: none;
+}
+
+#quick-head  ul {
+    list-style-type: none;
+}
+
+#quick-head > h5 {
+    text-align: center;
+}
+
+#timeline ul {
+    list-style: none;
+    border-left: 3px solid #000;
+    padding-left: 10px;
+}
+
+
+#timeline ul > li:before {
+    margin-left: -17px;
+    content: '\2022';
+    color: #000;
+    font-size: 1.7rem;
+}
+
+
+/*
+###########################################
+################# Projects ################
+###########################################
+*/
+
+.btn-light { 
+    color: #707070;
+    border:1px solid #d4d4d4;
+    border-radius: 3px;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 14px;
+    background-color: #e6e6e6;
+    background-image: linear-gradient(#fafafa,#eaeaea);
+    padding: 4px 8px 4px 7px;
+}
+
+.btn-light:hover {
+    color: #fff;
+    background-color: #3072b3;
+    background-image: linear-gradient(#599bdc, #3072b3);
+    border-color: #518cc6 #518cc6 #2a65a0;
+    text-shadow: 0 -1px 0 rgba(0,0,0.25);
+}
+
+.project-footer {
+    border-top: 1px solid #eee;
+    padding: 8px 0 6px;
+}
+
+.status {
+    font-size: 10px; 
+    padding-right: 10px;
+    text-transform: uppercase;
+}
+
+.status strong {
+    font-size: 12px;
+    padding-right: 5px;
+}
+
+#project a {
+    color: #33ACFF;
+    text-decoration: none;
+}
+
+#project ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#project ul li {
+    padding-bottom: 10px;
+    padding-left: 5px;
+}
+
+#project ul li a {
+
+    padding-left: 5px;
+}
+
+
+/*
+###########################################
+################# Else Where ##############
+###########################################
+*/
+
+
+#working ul {
+    list-style: none;
+    padding: 0;
+}
+
+#setup .tags {
+    line-height: 30px;
+}
+
+.tags a {
+    color: #565354;
+    background-color: #f2f2fd;
+    padding: 4px;
+    border-radius: 3px;
+    margin: 0 4px 0 4px;
+    text-decoration: none;
+}
+
+a.language{
+    background-color: #d7f8dd;
+}
+
+a.framework {
+    background-color: #f8ddd7;
+}
