@@ -23,10 +23,9 @@ const Quick = () => {
             </div>
             <div id="about" className="module">
                 <h5>About me</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sit amet iaculis justo. Sed tincidunt pellentesque nulla nec malesuada. Pellentesque a neque in mi.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sit amet iaculis justo. Sed tincidunt pellentesque nulla nec malesuada.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sit amet iaculis justo. Sed tincidunt pellentesque nulla nec malesuada</p>
+                <p>I am Deep learing enthusiastic by night and full stack dev by day. In my free time I workout and solve problems. I am currently learning NLP with Convolution networks and developing them. </p>
+                <p>I love understanding the intricate details of things I learn and hack it to make something fun. </p>
+                <p>I like learning new things and just applying in my daily live. I am alway looking for ways to improve myself professionally and as well as a person.</p>
             </div>
             <div id="timeline" className="module">
                 <h5>Timeline</h5>
