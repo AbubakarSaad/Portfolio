@@ -30,7 +30,7 @@ class Header extends Component {
         return(
             <div>
                 <Navbar color="light" light expand="md">
-                    <NavbarBrand href="/">Abubakar Saad</NavbarBrand>
+                    <NavbarBrand href="/Portfolio">Abubakar Saad</NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
