@@ -13,10 +13,10 @@ const Quick = () => {
                 <br /><br />
                 <div className="text-left">
                     <ul>
-                        <li><Commenting style={{ verticalAlign: '-.125em' }}/> he/him/his/Mr</li>
-                        <li><GoLocation style={{ verticalAlign: '-.125em' }}/> Toronto, ON</li>
-                        <li><FaLinkedinSquare style={{ verticalAlign: '-.125em' }}/> <a href="https://www.linkedin.com/in/abubakar-saad-032b7bb6">linkedin</a></li>
-                        <li><FaGithub style={{ verticalAlign: '-.125em' }}/> <a href="https://github.com/AbubakarSaad">github</a></li>
+                        <li><span className="vertical-align"><Commenting /></span> he/him/his/Mr</li>
+                        <li><span className="vertical-algin"><GoLocation /></span> Toronto, ON</li>
+                        <li><span className="vertical-algin"><FaLinkedinSquare /> </span> <a href="https://www.linkedin.com/in/abubakar-saad-032b7bb6">linkedin</a></li>
+                        <li><span className="vertical-algin"><FaGithub /> </span><a href="https://github.com/AbubakarSaad">github</a></li>
                     </ul>
                 
                 </div>
@@ -30,11 +30,11 @@ const Quick = () => {
             <div id="timeline" className="module">
                 <h5>Timeline</h5>
                 <ul>
-                    <li><MdFreeBreakfast style={{ verticalAlign: '-.125em', height:'1.5em', width:'1.5em' }}/> Freelance Developer</li>
-                    <li><IoIosCog style={{ verticalAlign: '-.125em', height:'1.5em', width:'1.5em' }}/> DevOps Specalist at RBC</li>
-                    <li><MdBusinessCenter style={{ verticalAlign: '-.125em', height:'1.5em', width:'1.5em' }}/> Developer at RBC</li>
-                    <li><MdWebAsset style={{ verticalAlign: '-.125em', height:'1.5em', width:'1.5em' }}/> Web Developer at Entomogen</li>
-                    <li><GoTools style={{ verticalAlign: '-.125em', height:'1.5em', width:'1.5em' }}/> Software Developer at Elmwood Fine Custom Cabinetry</li>
+                    <li><span className="vertical-algin height-width"><MdFreeBreakfast /></span> Freelance Developer</li>
+                    <li><span className="vertical-algin height-width"><IoIosCog /></span> DevOps Specalist at RBC</li>
+                    <li><span className="vertical-algin height-width"><MdBusinessCenter /></span> Developer at RBC</li>
+                    <li><span className="vertical-algin height-width"><MdWebAsset /> </span> Web Developer at Entomogen</li>
+                    <li><span className="vertical-algin height-width"><GoTools /></span> Software Developer at Elmwood Fine Custom Cabinetry</li>
                 </ul>
             </div>
         </section>

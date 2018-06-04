@@ -9,11 +9,11 @@ const ElseWhere = () => {
             <div id="working" className="module">
                 <h5>Work Preferences</h5>
                 <ul>
-                    <li><MdSettingsRemote style={{ verticalAlign: '-.125em' }}/> <span>Remote Friendly</span></li>
-                    <li><FaHeart style={{ verticalAlign: '-.125em' }}/> <span>Diverse Workforce</span></li>
-                    <li><MdDirectionsBike style={{ verticalAlign: '-.125em' }}/> <span>Work Life Balance</span></li>
-                    <li><FaMale style={{ verticalAlign: '-.125em' }}/> <span>Family Friendly</span></li>
-                    <li><FaHandSpockO style={{ verticalAlign: '-.125em' }}/> <span>Encourages OSS</span></li>
+                    <li><span className="vertical-algin"><MdSettingsRemote /> </span> <span>Remote Friendly</span></li>
+                    <li><span className="vertical-algin"><FaHeart /> </span> <span>Diverse Workforce</span></li>
+                    <li><span className="vertical-algin"><MdDirectionsBike /> </span> <span>Work Life Balance</span></li>
+                    <li><span className="vertical-algin"><FaMale /> </span> <span>Family Friendly</span></li>
+                    <li><span className="vertical-algin"><FaHandSpockO /> </span> <span>Encourages OSS</span></li>
                 </ul>
             </div>
             <div id="setup" className="tags module">
@@ -51,7 +51,7 @@ const ElseWhere = () => {
                     <a href="#">Web Dev</a>
                 </p>
             </div>
-            <div id="videos" class="module">
+            <div id="videos" className="module">
                 <h5>Videos</h5>
                 <div className="module">
                     <p>Coming Soon</p>

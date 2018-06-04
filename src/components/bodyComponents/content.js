@@ -10,7 +10,7 @@ const Content = () => {
             <div id="project" className="module">
                 <h5>Projects</h5>
                 <div className="module">
-                    <p><FaGithub style={{ verticalAlign: '-.125em' }}/> <a href="pose-estimation">Neural Networks Projects</a></p>
+                    <p><span className="verticalalign"><FaGithub /></span>  <a href="pose-estimation">Neural Networks Projects</a></p>
                     <Card 
                         title="Pose-Estimation"
                         description="This software recongize a pose human is performing in a image or in real-time. For now it's just two pose 1) Standing 2) Squatting."
@@ -26,7 +26,7 @@ const Content = () => {
                     />
                 </div>
                 {/* <div className="module">
-                    <p><FaGithub style={{ verticalAlign: '-.125em' }}/> <a href="pose-estimation">Neural Networks</a></p>
+                    <p><FaGithub /> <a href="pose-estimation">Neural Networks</a></p>
                     <Card 
                         title="Another App"
                         description="Neural Network from scrath, to show the inner details for the network"
@@ -35,10 +35,10 @@ const Content = () => {
                 <div className="module">
                     <h5>Writing</h5>
                     <ul>
-                        <li><FaStackOverflow style={{ verticalAlign: '-.125em' }}/> <a href="#">Coming Soon!</a></li>
-                        <li><FaUsb style={{ verticalAlign: '-.125em' }}/> <a href="#">Coming Soon!</a></li>
-                        <li><FaUserSecret style={{ verticalAlign: '-.125em' }}/> <a href="#">Coming Soon!</a></li>
-                        <li><FaWrench style={{ verticalAlign: '-.125em' }}/> <a href="#">Coming Soon!</a></li>
+                        <li><span className="verticalalign"><FaStackOverflow /> </span> <a href="#">Coming Soon!</a></li>
+                        <li><span className="verticalalign"><FaUsb /> </span> <a href="#">Coming Soon!</a></li>
+                        <li><span className="verticalalign"><FaUserSecret /> </span> <a href="#">Coming Soon!</a></li>
+                        <li><span className="verticalalign"><FaWrench /> </span> <a href="#">Coming Soon!</a></li>
                     </ul>
                 </div>
             </div>

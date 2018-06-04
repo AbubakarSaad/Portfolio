@@ -6,7 +6,7 @@ import {IoNetwork} from 'react-icons/lib/io';
 const ProjectCard = (props) => {
     
     return(
-        <Card style={{ padding: '10px', boxShadow: '0.1px 0.1px', margin: '5px', marginTop: '8px'}}>
+        <Card className="cardStyle">
             {props.img ? (
                 <div>
                     <div className="row">

@@ -16,6 +16,9 @@
     }
 
 }
+
+
+
 #main {
     padding: 20px;
 }
@@ -93,6 +96,14 @@ svg {
     font-size: 1.7rem;
 }
 
+.verticalalign {
+    vertical-align: '-.125em';
+}
+
+.height-width {
+    height: '1.5em';
+    width: '1.5em';
+}
 
 /*
 ###########################################
@@ -188,4 +199,18 @@ a.language{
 
 a.framework {
     background-color: #f8ddd7;
+}
+
+
+/*
+###########################################
+################# Card ####################
+###########################################
+*/
+
+.cardStyle {
+    padding: 10px;
+    box-shadow: 0.1px 0.1px;
+     margin: 5px; 
+     margin-top: 8px;
 }
