@@ -5,7 +5,8 @@ class Contact extends Component {
     render() {
         return(
             <div>
-                Hello from Contact
+                <p>Email: abubakar.saad.891@gmail.com</p>
+                <p>Contact me form coming soon!</p>
             </div>
         );
     }

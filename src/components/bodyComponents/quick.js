@@ -23,9 +23,9 @@ const Quick = () => {
             </div>
             <div id="about" className="module">
                 <h5>About me</h5>
-                <p>I am a Deep learing enthusiast by night and full-stack dev by day. In my free time I workout and solve problems. I am currently learning NLP with Convolution networks by creating models and NLP filters. </p>
-                <p>I love understanding the intricate details of things I learn and hack it to make something fun. </p>
-                <p>I like learning new things and just applying them into my daily life. I am alway looking for ways to improve myself professionally and as well as a person.</p>
+                <p>By night, I am a Deep learning enthusiast and by day a curious full-stack developer. I love understanding the intricate details of how things work, and often learn by hacking, just to make things fun! My current learning excitement involves Convolution Networks and NLP filters.</p>
+                <p>Aside from the computer scientist in me, I enjoy working out and learning to play piano in my free time. I continuously strive to push myself forward both as professionally and more importantly, as a person.</p>
+                <p>I am always open to new ideas and possible projects, so don't hesitate to contact me if you have got one!</p>
             </div>
             <div id="timeline" className="module">
                 <h5>Timeline</h5>

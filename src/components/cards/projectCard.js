@@ -12,7 +12,7 @@ const ProjectCard = (props) => {
             <img width="100%" src={require(`../../images/${props.imgName}.jpg`)} alt="Card cap" />
             <CardBody>
                 <CardText>{props.description}</CardText>
-                <CardLink href="#">Card Link</CardLink>
+                <a href={props.link} target="_blank">{props.cardLink}</a>
             </CardBody>
         </Card>
     </Col>);
