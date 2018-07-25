@@ -39,7 +39,7 @@ const ElseWhere = () => {
                 </p>
                 <p>
                     <a href="#" className="framework">React</a>
-                    <a href="#" className="framework">Tensorflow</a>
+                    <a href="#" className="framework">PyTorch</a>
                     <a href="#" className="framework">Flask</a>
                     <a href="#" className="framework">.NET Core</a>
                 </p>
