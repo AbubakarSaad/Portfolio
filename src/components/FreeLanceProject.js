@@ -16,7 +16,7 @@ class FreeProjects extends Component {
                         title="Workplace Bullying"
                         imgName="workplace-bullying"
                         description="Workplace Bullying helps users take the necessary steps to recover from their experiences, it provides counselling, legal resources and steps required for them to better work enviroment. Users can start feeling as a victor."
-                        link="#"
+                        link="https://play.google.com/store/apps/details?id=com.lisa.workbullyingapp"
                         cardLink="Workplace Bullying"
                     />
                     <ProjectCard 

@@ -35,7 +35,7 @@ const Content = () => {
                 <div className="module">
                     <h5>Writing</h5>
                     <ul>
-                        <li><span className="verticalalign"><FaStackOverflow /> </span> <a href="#">Coming Soon!</a></li>
+                        <li><span className="verticalalign"><FaStackOverflow /> </span> <a href="https://github.com/AbubakarSaad/PyTorch-Practices/blob/master/Linear%20Regression.ipynb">Simple Linear Regression with PyTorch</a></li>
                         <li><span className="verticalalign"><FaUsb /> </span> <a href="#">Coming Soon!</a></li>
                         <li><span className="verticalalign"><FaUserSecret /> </span> <a href="#">Coming Soon!</a></li>
                         <li><span className="verticalalign"><FaWrench /> </span> <a href="#">Coming Soon!</a></li>
