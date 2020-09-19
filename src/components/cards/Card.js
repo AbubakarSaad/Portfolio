@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, CardTitle } from 'reactstrap';
-import {IoNetwork} from 'react-icons/lib/io';
+import {IoNetwork} from 'react-icons/io';
 
 
 const ProjectCard = (props) => {
@@ -31,7 +31,7 @@ const ProjectCard = (props) => {
                             star
                         </span>
                     </div>
-                </div>) : (<p><IoNetwork /><a href="#">{props.title}</a> - 
+                </div>) : (<p><a href="#">{props.title}</a> - 
                      {props.description}</p>)
             }
         </Card>

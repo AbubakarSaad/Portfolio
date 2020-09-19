@@ -184,7 +184,7 @@ svg {
     line-height: 30px;
 }
 
-.tags a {
+.tags p {
     color: #565354;
     background-color: #f2f2fd;
     padding: 4px;
@@ -193,14 +193,31 @@ svg {
     text-decoration: none;
 }
 
-a.language{
+p.tool {
+    margin-left: 15px;
+    padding: 5px;
+    margin-top: 10px;
+}
+p.language{
     background-color: #d7f8dd;
+    margin-left: 15px;
+    padding: 5px;
 }
 
-a.framework {
+p.framework {
     background-color: #f8ddd7;
+    margin-left: 15px;
+    padding: 5px;
+    margin-top: 10px;
 }
 
+.icon {
+    position: relative;
+    /* Adjust these values accordingly */
+    top: 2px;
+    left: 1px;
+    margin: 1px;
+}
 
 /*
 ###########################################

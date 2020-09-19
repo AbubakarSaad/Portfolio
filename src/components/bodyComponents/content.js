@@ -1,6 +1,6 @@
 import React from 'react';
-import {FaGithub, FaStackOverflow, FaUsb, FaUserSecret, FaWrench} from 'react-icons/lib/fa';
-import {IoNetwork} from 'react-icons/lib/io';
+import {FaGithub, FaStackOverflow, FaUsb, FaUserSecret, FaWrench} from 'react-icons/fa';
+import {IoNetwork} from 'react-icons/io';
 import Card from '../cards/Card';
 
 
