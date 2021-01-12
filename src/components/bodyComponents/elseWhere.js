@@ -1,12 +1,9 @@
-import React, { Component, useState, useEffect, useRef } from 'react';
+import React, { Component } from 'react';
 import {MdSettingsRemote, MdDirectionsBike} from 'react-icons/md';
-import {FaHeart, FaMale, FaHandSpockO, FaThList} from 'react-icons/fa';
+import {FaHeart, FaMale} from 'react-icons/fa';
 import { SiAngularjs, SiCplusplus, SiDjango, SiPython, SiPytorch, SiReact, SiVisualstudiocode, SiWindows, SiLinux} from 'react-icons/si';
 import { DiDocker, DiJava, DiJavascript } from 'react-icons/di';
-import  CanvasDraw from 'react-canvas-draw';
-import { render } from 'react-dom';
-
-// `https://flask-pytorch-rnn.herokuapp.com/predict?name={this.state.value}`
+import ReactGA from 'react-ga';
 
 class ElseWhere extends Component {
     constructor(props) {
@@ -27,21 +24,19 @@ class ElseWhere extends Component {
     }
 
     handleClick() {
-        console.log(this.state.value);
+        ReactGA.event({
+            category: 'Button',
+            action: 'Enthicity Button was clicked'
+        })
+        // console.log(this.state.value);
         this.fetchData().then(resp => resp.json())
         .then(data => {
-            console.log("Success", data);
+            // console.log("Success", data);
             this.setState({resp: data.prediction});
         }).then(err => {
-            console.log("error: ", err);
+            // console.log("error: ", err);
         });
 
-        // this.fetchData().then(result => {
-        //     console.log("Result==", result);
-        //     this.setState({resp: result});
-        // });
-
-        // console.log(this.state.resp);
     }
 
     async fetchData() {
@@ -107,8 +102,9 @@ class ElseWhere extends Component {
                         >
                             Enter
                         </button>
-                        <p>You possbily belong to: {this.state.resp}</p>
+                        <p>You possbily belong to: <b>{this.state.resp}</b></p>
                     </div>
+                    <p>I'm not saving anyone's name as of now. That part is coming soon to better train the model :)</p>
                 </div>
             </section>
         );

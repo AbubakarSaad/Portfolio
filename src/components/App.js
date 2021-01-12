@@ -6,9 +6,18 @@ import MainBody from './MainBody';
 import Footer from './Footer';
 import FreeProjects from './FreeLanceProject';
 import Contact from './Contact';
+import ReactGa from 'react-ga';
 
 
 class App extends Component {
+
+  componentDidMount() {
+    ReactGa.initialize('UA-178399659-1');
+
+    // to report page view
+    ReactGa.pageview(window.location.pathname + window.location.search);
+  }
+
   render() {
     return (
       <div>
