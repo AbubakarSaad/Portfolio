@@ -1,0 +1,331 @@
+.loadingScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-width: 400px;
+  padding: var(--spacing-xl);
+}
+
+/* Animated Logo */
+.logo {
+  width: 120px;
+  height: 120px;
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--spacing-xl);
+  position: relative;
+  overflow: hidden;
+}
+
+.logo::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: rotate 2s linear infinite;
+}
+
+.logoText {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-extrabold);
+  color: white;
+  z-index: 1;
+  position: relative;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Loading Animation */
+.loadingAnimation {
+  margin-bottom: var(--spacing-lg);
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinnerInner {
+  width: 100%;
+  height: 100%;
+  border: 3px solid transparent;
+  border-top: 3px solid var(--color-primary);
+  border-right: 3px solid var(--color-secondary);
+  border-radius: 50%;
+  animation: spin 1.5s linear infinite;
+  position: relative;
+}
+
+.spinnerInner::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  height: 70%;
+  border: 2px solid transparent;
+  border-bottom: 2px solid var(--color-accent);
+  border-left: 2px solid var(--color-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite reverse;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Loading Text */
+.loadingText {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-medium);
+  margin-bottom: var(--spacing-lg);
+  letter-spacing: 0.5px;
+}
+
+/* Progress Bar */
+.progressContainer {
+  width: 200px;
+  height: 4px;
+  background: var(--color-bg-tertiary);
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progressBar {
+  height: 100%;
+  background: var(--gradient-primary);
+  border-radius: 2px;
+  position: relative;
+}
+
+.progressBar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Floating Particles */
+.particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+.particle:nth-child(2n) {
+  background: var(--color-secondary);
+}
+
+.particle:nth-child(3n) {
+  background: var(--color-accent);
+  width: 3px;
+  height: 3px;
+}
+
+.particle:nth-child(4n) {
+  background: var(--color-primary);
+  width: 2px;
+  height: 2px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: var(--spacing-lg);
+    max-width: 320px;
+  }
+
+  .logo {
+    width: 100px;
+    height: 100px;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .logoText {
+    font-size: var(--font-size-2xl);
+  }
+
+  .spinner {
+    width: 50px;
+    height: 50px;
+  }
+
+  .loadingText {
+    font-size: var(--font-size-base);
+  }
+
+  .progressContainer {
+    width: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: var(--spacing-md);
+    max-width: 280px;
+  }
+
+  .logo {
+    width: 80px;
+    height: 80px;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .logoText {
+    font-size: var(--font-size-xl);
+  }
+
+  .spinner {
+    width: 40px;
+    height: 40px;
+  }
+
+  .loadingText {
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .progressContainer {
+    width: 140px;
+    height: 3px;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .logo::before,
+  .spinnerInner,
+  .spinnerInner::before,
+  .progressBar::after {
+    animation: none;
+  }
+
+  .particle {
+    display: none;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .loadingScreen {
+    background: var(--color-bg-primary);
+  }
+
+  .logo {
+    background: var(--color-primary);
+    border: 3px solid var(--color-text-primary);
+  }
+
+  .spinnerInner {
+    border-top-color: var(--color-text-primary);
+    border-right-color: var(--color-text-primary);
+  }
+
+  .progressContainer {
+    border: 1px solid var(--color-text-primary);
+  }
+
+  .progressBar {
+    background: var(--color-primary);
+  }
+}
+
+/* Dark Mode Adjustments */
+@media (prefers-color-scheme: dark) {
+  .loadingScreen {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+  }
+}
+
+/* Loading States */
+.loadingScreen[data-error="true"] .logo {
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  animation: shake 0.5s ease-in-out;
+}
+
+.loadingScreen[data-error="true"] .loadingText::after {
+  content: ' - Error occurred';
+  color: var(--color-accent);
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+/* Performance Optimizations */
+.loadingScreen * {
+  will-change: transform, opacity;
+}
+
+.logo,
+.spinner,
+.progressBar {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Print Styles */
+@media print {
+  .loadingScreen {
+    display: none;
+  }
+}

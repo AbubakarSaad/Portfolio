@@ -1,0 +1,218 @@
+.scrollToTop {
+  position: fixed;
+  bottom: var(--spacing-lg);
+  right: var(--spacing-lg);
+  width: 55px;
+  height: 55px;
+  background: var(--gradient-primary);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 25px rgba(243, 156, 18, 0.3);
+  transition: all var(--transition-medium);
+  position: relative;
+  overflow: hidden;
+}
+
+.scrollToTop::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.scrollToTop:hover::before {
+  transform: translateX(100%);
+}
+
+.scrollToTop:hover {
+  box-shadow: 0 12px 35px rgba(243, 156, 18, 0.4);
+  transform: translateY(-2px) scale(1.05);
+}
+
+.scrollToTop:active {
+  transform: translateY(0) scale(0.95);
+}
+
+.iconContainer {
+  color: white;
+  font-size: var(--font-size-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  position: relative;
+}
+
+.ripple {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  animation: ripple 2s infinite;
+}
+
+@keyframes ripple {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .scrollToTop {
+    bottom: var(--spacing-md);
+    right: var(--spacing-md);
+    width: 50px;
+    height: 50px;
+  }
+
+  .iconContainer {
+    font-size: var(--font-size-base);
+  }
+}
+
+@media (max-width: 480px) {
+  .scrollToTop {
+    bottom: var(--spacing-sm);
+    right: var(--spacing-sm);
+    width: 45px;
+    height: 45px;
+  }
+
+  .iconContainer {
+    font-size: var(--font-size-sm);
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .scrollToTop {
+    transition: none;
+  }
+
+  .scrollToTop:hover {
+    transform: none;
+  }
+
+  .iconContainer {
+    animation: none;
+  }
+
+  .ripple {
+    animation: none;
+  }
+
+  .scrollToTop::before {
+    display: none;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .scrollToTop {
+    background: var(--color-primary);
+    border: 3px solid var(--color-text-primary);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  }
+
+  .ripple {
+    display: none;
+  }
+}
+
+/* Focus States */
+.scrollToTop:focus {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+/* Dark Mode Adjustments */
+@media (prefers-color-scheme: dark) {
+  .scrollToTop {
+    box-shadow: 0 8px 25px rgba(243, 156, 18, 0.4);
+  }
+
+  .scrollToTop:hover {
+    box-shadow: 0 12px 35px rgba(243, 156, 18, 0.5);
+  }
+}
+
+/* Print Styles */
+@media print {
+  .scrollToTop {
+    display: none;
+  }
+}
+
+/* Loading State */
+.scrollToTop[data-loading="true"] {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.scrollToTop[data-loading="true"] .iconContainer {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Accessibility Enhancements */
+.scrollToTop[aria-pressed="true"] {
+  background: var(--gradient-secondary);
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .scrollToTop {
+    width: 60px;
+    height: 60px;
+  }
+
+  .scrollToTop:hover {
+    transform: none;
+    box-shadow: 0 8px 25px rgba(243, 156, 18, 0.3);
+  }
+
+  .iconContainer {
+    font-size: var(--font-size-xl);
+  }
+}
+
+/* Safe Area Adjustments for Mobile */
+@supports (padding: max(0px)) {
+  .scrollToTop {
+    bottom: max(var(--spacing-lg), env(safe-area-inset-bottom, 0px) + var(--spacing-sm));
+    right: max(var(--spacing-lg), env(safe-area-inset-right, 0px) + var(--spacing-sm));
+  }
+
+  @media (max-width: 768px) {
+    .scrollToTop {
+      bottom: max(var(--spacing-md), env(safe-area-inset-bottom, 0px) + var(--spacing-xs));
+      right: max(var(--spacing-md), env(safe-area-inset-right, 0px) + var(--spacing-xs));
+    }
+  }
+}
