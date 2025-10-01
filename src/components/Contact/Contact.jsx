@@ -1,11 +1,12 @@
 import React, { useState, useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { 
-  FiMail, 
-  FiPhone, 
-  FiMapPin, 
-  FiLinkedin, 
-  FiGithub, 
+import emailjs from '@emailjs/browser'
+import {
+  FiMail,
+  FiPhone,
+  FiMapPin,
+  FiLinkedin,
+  FiGithub,
   FiTwitter,
   FiSend,
   FiUser,
@@ -145,10 +146,69 @@ const Contact = () => {
     })
 
     try {
-      // Simulate API call - replace with actual form submission logic
-      await new Promise(resolve => setTimeout(resolve, 2000))
+      // EmailJS configuration from environment variables
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_hpbiilb'
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_39ahhxt'
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'N1ihLWrkC3V9hmke3'
       
-      // Simulate success
+      // Additional security: Basic rate limiting (client-side)
+      const lastSubmission = localStorage.getItem('lastEmailSubmission')
+      const now = Date.now()
+      const oneMinute = 60 * 1000
+      
+      if (lastSubmission && (now - parseInt(lastSubmission)) < oneMinute) {
+        throw new Error('Please wait a minute before sending another message.')
+      }
+      
+      // Template parameters for EmailJS (using common variable names)
+      const templateParams = {
+        // Standard EmailJS variables
+        from_name: formData.name,
+        from_email: formData.email,
+        user_email: formData.email,  // Alternative variable name
+        user_name: formData.name,    // Alternative variable name
+        subject: formData.subject,
+        message: formData.message,
+        to_name: 'Abubakar Saad',
+        reply_to: formData.email,
+        
+        // Additional details for better email formatting
+        contact_email: formData.email,
+        sender_email: formData.email,
+        email: formData.email,  // Simple variable name
+        name: formData.name,    // Simple variable name
+        
+        // Formatted message with contact details
+        full_message: `
+Name: ${formData.name}
+Email: ${formData.email}
+Subject: ${formData.subject}
+
+Message:
+${formData.message}
+
+---
+Sent from Portfolio Contact Form
+Reply to: ${formData.email}
+        `.trim()
+      }
+
+      // Debug: Log template parameters (remove in production)
+      console.log('Sending email with parameters:', templateParams)
+
+      // Send email using EmailJS
+      const result = await emailjs.send(
+        serviceId,
+        templateId,
+        templateParams,
+        publicKey
+      )
+
+      console.log('Email sent successfully:', result)
+      
+      // Store submission timestamp for rate limiting
+      localStorage.setItem('lastEmailSubmission', now.toString())
+      
       setFormStatus({
         isSubmitting: false,
         isSubmitted: true,
@@ -173,6 +233,7 @@ const Contact = () => {
       }, 5000)
 
     } catch (error) {
+      console.error('EmailJS error:', error)
       setFormStatus({
         isSubmitting: false,
         isSubmitted: false,
